@@ -3,6 +3,8 @@
 Simple script for running and recording the results of various network
 connection tests. 
 
+Requires [pathload2](http://www.measurementlab.net/measurement-lab-tools) for measuring available bandwidth. 
+
 ## Usage
 
     $ java -jar bandmon-1.0.0-SNAPSHOT-standalone.jar    
