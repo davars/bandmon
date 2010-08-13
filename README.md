@@ -9,7 +9,9 @@ connection tests.
 
 ## Installation
 
-Review project.clj, settings, init-db and modify them as needed for your setup, then run:
+Create a database to store results (or use bandmon-postgres.sql).
+
+Review project.clj and settings in core.clj.  Modify them as needed for your setup then run:
 
     $ lein uberjar
 

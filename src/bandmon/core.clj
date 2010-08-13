@@ -141,31 +141,3 @@
      (apply 
       merge 
       {:start_time start :end_time end} results))))
-
-(defn init-db []
-  (sql/with-connection db
-    (sql/do-commands
-     "
-CREATE TABLE test_results
-(
-  id serial NOT NULL,
-  host_ip text,
-  start_time timestamp with time zone NOT NULL,
-  end_time timestamp with time zone NOT NULL,
-  upstream_lo double precision,
-  upstream_hi double precision,
-  downstream_lo double precision,
-  downstream_hi double precision,
-  mlab_ip text,
-  ping_sent integer,
-  ping_rcvd integer,
-  ping_min double precision,
-  ping_avg double precision,
-  ping_max double precision,
-  ping_mdev double precision,
-  CONSTRAINT pk_test_results PRIMARY KEY (id)
-)
-WITH (
-  OIDS=FALSE
-)"
-"ALTER TABLE test_results OWNER TO postgres")))
