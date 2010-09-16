@@ -87,7 +87,7 @@ CREATE TABLE test_results (
 --
 
 CREATE VIEW summary AS
-    SELECT test_results.host_ip, max(test_results.start_time) AS last_run, avg(test_results.upstream_lo) AS upstream_lo, avg(test_results.downstream_lo) AS downstream_lo, avg(test_results.downstream_hi) AS downstream_hi, avg(test_results.ping_avg) AS latency, ((100.0 * (sum(test_results.ping_sent))::numeric) / (sum(test_results.ping_rcvd))::numeric) AS received_pct FROM test_results GROUP BY test_results.host_ip;
+    SELECT test_results.host_ip, max(test_results.start_time) AS last_run, avg(test_results.upstream_lo) AS upstream_lo, avg(test_results.downstream_lo) AS downstream_lo, avg(test_results.downstream_hi) AS downstream_hi, avg(test_results.ping_avg) AS latency, ((100.0 * (sum(test_results.ping_rcvd))::numeric) / (sum(test_results.ping_sent))::numeric) AS received_pct FROM test_results GROUP BY test_results.host_ip;
 
 
 --
@@ -168,4 +168,3 @@ GRANT ALL ON SCHEMA public TO PUBLIC;
 --
 -- PostgreSQL database dump complete
 --
-
